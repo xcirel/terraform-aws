@@ -3,32 +3,27 @@ terraform {
 
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.51.0"
     }
   }
 }
 
 provider "aws" {
-    region = "us-east-1"     
-    profile = "terraform"  
+  region  = "us-east-1"
+  profile = "terraform"
 }
 
 resource "aws_s3_bucket" "my-test-bucket" {
-  bucket = "my-tf-test-bucket-devops-lab-9043943867346743"
-  acl = "private"
+  bucket = "my-tf-test-bucket-devops-lab-9043943867348987878986743"
+  #acl    = "private"
 
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
-    Managedby = "Terraform"
-    Owner = "Eric dos Santos"
-    UpdateAt = "2023-01-20"
+    ManagedBy   = "Terraform"
+    Owner       = "Eric dos Santos"
+    UpdateAt    = "2023-01-20"
 
   }
 }
-
-# resource "aws_s3_bucket_acl" "example" {
-#   bucket = aws_s3_bucket.b.id
-#   acl    = "private"
-# }
