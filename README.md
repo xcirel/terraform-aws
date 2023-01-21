@@ -2,7 +2,7 @@
 I'm training my writing in English, please, in case of mistakes, be patient and be happy :)
 
 
-### Links de referência documentação HashiCorp - Terraform
+### Links of reference to the documentation to HashiCorp - Terraform
 
 To create a S3 Bucket 
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#
