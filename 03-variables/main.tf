@@ -10,16 +10,13 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
-  profile = "terraform"
+  region = var.aws_region
+  profile = var.aws_profile
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-00874d747dde814fa"
-  instance_type = "t3.micro"
-
-  tags = {
-    Name = "ThanksAWS"
-    Poc = "Terraform"
-  }
+  ami           = var.instance_ami
+  instance_type = var.instance_type
+  tags = var.instance_tags
+  
 }
