@@ -100,3 +100,4 @@ Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
 
 ## 03 - Working with variables
 
+Here, we did work with variables. If you don't have the parameter <em>default</em> when executing the command the prompt show to input data.
