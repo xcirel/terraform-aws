@@ -1,40 +1,34 @@
-variable "aws_region" {
-  type = string
+variable "environment" {
+  type        = string
   description = ""
-  default = "us-east-1"
+}
+
+variable "aws_region" {
+  type        = string
+  description = ""
 }
 
 variable "aws_profile" {
-  type = string
+  type        = string
   description = ""
-  default = "terraform"
 }
 
 variable "instance_ami" {
-  type = string
+  type        = string
   description = ""
-  default = "ami-00874d747dde814fa"
 }
 
 variable "instance_type" {
-  type = string
+  type        = string
   description = ""
-  default = "t3.micro"
 }
 
 variable "instance_tags" {
-  type = map(string)
+  type        = map(string)
   description = ""
   default = {
-    Name = "Ubuntu"
+    Name    = "Ubuntu"
     Project = "Curso Terraform AWS"
-    Stop = "yes"
+    Stop    = "yes"
   }
-}
-
-variable "instance_keyname" {
-  type = string
-  description = ""
-  default = "terraform"
-
 }

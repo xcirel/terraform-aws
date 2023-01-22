@@ -101,3 +101,24 @@ Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
 ## 03 - Working with variables
 
 Here, we did work with variables. If you don't have the parameter <em>default</em> when executing the command the prompt show to input data.
+
+This, propose flexibility in the hour to provide your infra.
+
+Other option to work without <em>default</em> parameter is especifing on command line, for example
+
+```sh
+TF_VAR_aws_profile=eric-useast1 terraform plan
+```
+or
+
+Using a flag
+```sh
+terraform plan -var="aws_profile=eric-useast1" -var="instance_type=t3.large"
+```
+In the example above, the prompt won't be shown.
+
+
+Now, we work with a file with variables and, tfor work hin, just run using the flag like
+```sh
+terraform plan -var-file="prod.tfvars"
+```
