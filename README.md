@@ -125,8 +125,11 @@ terraform plan -var-file="prod.tfvars"
 
 ## 04 - Working with interpolation, locals and outputs
 
-- Interpolation, see in the practice browsing on folder bucket = "${random_pet.bucket.id}-${var.environment}"
+- Interpolation, see in the practice browsing on folder in file s3.tf
 
+``code
+bucket = "${random_pet.bucket.id}-${var.environment}"
+``
 - When we use one or more values repeatedly, we can create a file called <em>locals.tf</em>
 
 - Using outputs to expose information, we study more deeply in the future
