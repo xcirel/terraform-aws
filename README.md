@@ -1,4 +1,4 @@
-# Terraform AWS
+# Terraform with AWS
 I'm training my writing in English, please, in case of mistakes, be patient and be happy :)
 
 ## 01 - Basic
@@ -66,7 +66,7 @@ Note: You didn't use the -out option to save this plan, so Terraform can't guara
 
 ---------------------------------------
 
-If you change the resource name for example, and run the command <em>terraform plan</em> observe that the output on the end message is any like as
+If you change the resource name for example, and run the command *terraform plan* observe that the output on the end message is any like as
 
 
 ```console
@@ -100,11 +100,11 @@ Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
 
 ## 03 - Working with variables
 
-Here, we did work with variables. If you don't have the parameter <em>default</em> when executing the command the prompt show to input data.
+Here, we did work with variables. If you don't have the parameter *default* when executing the command the prompt show to input data.
 
 This, propose flexibility in the hour to provide your infra.
 
-Other option to work without <em>default</em> parameter is especifing on command line, for example
+Other option to work without *default* parameter is especifing on command line, for example
 
 ```sh
 TF_VAR_aws_profile=eric-useast1 terraform plan
@@ -125,5 +125,33 @@ terraform plan -var-file="prod.tfvars"
 
 ## 04 - Working with interpolation, locals and outputs
 
-- 
-- When we use one or more values repeatedly, we can create a file called locals.tf
+- Interpolation, see in the practice browsing on folder bucket = "${random_pet.bucket.id}-${var.environment}"
+
+- When we use one or more values repeatedly, we can create a file called <em>locals.tf</em>
+
+- Using outputs to expose information, we study more deeply in the future
+```console
+terraform plan -out="tfplan.out"
+random_pet.bucket: Refreshing state... [id=evenly-secondly-solely-dear-kiwi]
+aws_s3_bucket.this: Refreshing state... [id=evenly-secondly-solely-dear-kiwi-dev]
+aws_s3_object.this: Refreshing state... [id=config/ips.json]
+
+Changes to Outputs:
+  + bucket_domain_name = "evenly-secondly-solely-dear-kiwi-dev.s3.amazonaws.com"
+  + bucket_name        = "evenly-secondly-solely-dear-kiwi-dev"
+  + buckt_arn          = "arn:aws:s3:::evenly-secondly-solely-dear-kiwi-dev"
+  + name               = "evenly-secondly-solely-dear-kiwi-dev/config/ips.json"
+
+You can apply this plan to save these new output values to the Terraform state, without changing any real infrastructure.
+```
+***
+
+#### Links of reference
+**Interpolation**
+https://developer.hashicorp.com/terraform/language/expressions/strings#interpolation
+
+**Provider Random** resource *random_pet*
+https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet
+
+**Outputs**
+https://developer.hashicorp.com/terraform/language/values/outputs
