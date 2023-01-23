@@ -122,3 +122,8 @@ Now, we work with a file with variables and, tfor work hin, just run using the f
 ```sh
 terraform plan -var-file="prod.tfvars"
 ```
+
+## 04 - Working with interpolation, locals and outputs
+
+- 
+- When we use one or more values repeatedly, we can create a file called locals.tf
