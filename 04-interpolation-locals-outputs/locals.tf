@@ -1,7 +1,7 @@
 locals {
   ip_file_path = "ips.json"
 
-  commom_tags = {
+  common_tags = {
     Name        = "Course of Terraform"
     Environment = var.environment
     ManagedBy   = "Terraform"

@@ -10,24 +10,24 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_b
 ### Step by step to create resource(s)
 1. To init Terraform
 ```sh
-terraform init
+$ terraform init
 ```
 
 2. To view what will execute on plan
 ```sh
-terraform plan
+$ terraform plan
 ```
 
 3. To apply the file manifest
 ```sh
-terraform apply
+$ terraform apply
 ```
 
 ## 02 - Change and Destroy
 
 When I change simple data and execute
 ```sh
-terraform plan
+$ terraform plan
 ```
 the output is
 
@@ -76,13 +76,13 @@ Plan: 1 to add, 0 to change, 1 to destroy.
 To the resource be destroy and a new be created 
 
 ```sh
-terraform plan -out="tfplan.out"
+$ terraform plan -out="tfplan.out"
 ```
 
 to execute changes, run
 
 ```sh
-terraform apply "tfplan.out"
+$ terraform apply "tfplan.out"
 ```
 
 the output will be any like that
@@ -107,20 +107,20 @@ This, propose flexibility in the hour to provide your infra.
 Other option to work without *default* parameter is especifing on command line, for example
 
 ```sh
-TF_VAR_aws_profile=eric-useast1 terraform plan
+$ TF_VAR_aws_profile=eric-useast1 terraform plan
 ```
 or
 
 Using a flag
 ```sh
-terraform plan -var="aws_profile=eric-useast1" -var="instance_type=t3.large"
+$ terraform plan -var="aws_profile=eric-useast1" -var="instance_type=t3.large"
 ```
 In the example above, the prompt won't be shown.
 
 
 Now, we work with a file with variables and, tfor work hin, just run using the flag like
 ```sh
-terraform plan -var-file="prod.tfvars"
+$ terraform plan -var-file="prod.tfvars"
 ```
 
 ## 04 - Working with interpolation, locals and outputs
