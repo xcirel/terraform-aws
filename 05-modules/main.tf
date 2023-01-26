@@ -54,12 +54,15 @@ module "website" {
 
   name = random_pet.website.id
 
+  files = "${path.root}/website"
+
   website = {
 
     index_document = "index.html"
 
     error_document = "error_document.html"
   }
+
 
   policy = <<EOT
     {
