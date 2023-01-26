@@ -162,8 +162,12 @@ https://developer.hashicorp.com/terraform/language/values/outputs
 
 
 ## 05 - Modules
+In this module, we create a public bucket to host a static website
 
+http://rarely-terribly-vaguely-boss-cockatoo.s3-website-us-east-1.amazonaws.com/
 
 
 ### Link of reference
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
+
+https://github.com/hashicorp/terraform-template-dir/blob/master/variables.tf
