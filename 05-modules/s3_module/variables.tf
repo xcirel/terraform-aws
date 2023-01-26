@@ -25,3 +25,13 @@ variable "policy" {
   default = null
 
 }
+
+variable "tags" {
+
+  type = map(string)
+
+  description = ""
+
+  default = {}
+
+}

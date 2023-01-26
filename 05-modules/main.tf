@@ -6,7 +6,7 @@ terraform {
 
     aws = {
 
-      source  = "hashicorp/aws"
+      source = "hashicorp/aws"
 
       version = "4.51.0"
 
@@ -19,7 +19,7 @@ terraform {
 
 provider "aws" {
 
-  region  = "us-east-1"
+  region = "us-east-1"
 
   profile = "terraform"
 
@@ -28,6 +28,14 @@ provider "aws" {
 
 resource "random_pet" "this" {
 
-    length = 5
-  
+  length = 5
+
+}
+
+module "bucket" {
+
+  source = "./s3_module"
+
+  name = random_pet.this.id
+
 }
