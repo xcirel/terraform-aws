@@ -15,23 +15,16 @@ resource "aws_s3_bucket" "this" {
 
     content {
 
-      index_document = lookup(website, "index_document", null)
+      index_document = lookup(website.value, "index_document", null)
 
-      error_document = lookup(website, "error_document", null)
+      error_document = lookup(website.value, "error_document", null)
 
-      redirect_all_requests_to = lookup(website, "redirect_all_requests_to", null)
+      redirect_all_requests_to = lookup(website.value, "redirect_all_requests_to", null)
 
-      routing_rules = lookup(website, "routing_rules", null)
+      routing_rules = lookup(website.value, "routing_rules", null)
 
     }
 
-  }
-
-  website {
-
-    index_document = "index.html"
-
-    error_document = "index.html"
   }
 
 }
