@@ -39,7 +39,15 @@ module "bucket" {
 
   name = random_pet.this.id
 
+
+  versioning = {
+    enabled = true
+  }
+
 }
+
+
+
 
 
 resource "random_pet" "website" {

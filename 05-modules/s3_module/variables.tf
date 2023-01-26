@@ -63,3 +63,14 @@ variable "website" {
   default = {}
 
 }
+
+
+variable "versioning" {
+
+  type = map(string)
+
+  description = "Map containing website configuration"
+
+  default = {}
+
+}

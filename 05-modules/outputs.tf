@@ -32,3 +32,10 @@ output "bucket-website-arn" {
   value = module.website.arn
 
 }
+
+
+output "bucket-website-files" {
+
+  value = module.website.files
+
+}

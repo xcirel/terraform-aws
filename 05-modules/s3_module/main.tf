@@ -27,9 +27,23 @@ resource "aws_s3_bucket" "this" {
 
   }
 
+  dynamic "versioning" {
+
+    for_each = length(keys(var.versioning)) == 0 ? [] : [var.website]
+
+    content {
+
+      enabled = lookup(versioning.value, "enabled", null)
+
+      mfa_delete = lookup(versioning.value, "mfa_delete", null)
+
+    }
+
+  }
+
 }
 
-module "object" {
+module "objects" {
   source = "./s3_object"
 
   for_each = var.files != "" ? fileset(var.files, "**") : []
