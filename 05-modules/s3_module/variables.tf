@@ -35,3 +35,14 @@ variable "tags" {
   default = {}
 
 }
+
+
+variable "website" {
+
+  type = map(string)
+
+  description = "Map containing website configuration"
+
+  default = {}
+
+}
